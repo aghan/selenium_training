@@ -1,0 +1,8 @@
+uuid: 08897c98-08c2-4723-b400-c99b22cbb796
+langcode: en
+status: true
+dependencies: {  }
+id: popular-categories
+label: 'Popular Categories'
+description: 'Curated list of categories.'
+locked: false

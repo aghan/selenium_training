@@ -1,0 +1,5 @@
+<?php
+
+function misc_features_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  //echo "<pre>ashish";print_r($form);echo "</pre>";exit;
+}

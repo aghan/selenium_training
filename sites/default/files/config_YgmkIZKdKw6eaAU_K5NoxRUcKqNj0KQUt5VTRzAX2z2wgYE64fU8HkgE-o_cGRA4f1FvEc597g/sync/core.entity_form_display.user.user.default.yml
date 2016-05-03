@@ -1,0 +1,24 @@
+uuid: ffc0481e-9c35-4251-9236-5486ae12a336
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.user.user.user_picture
+  module:
+    - user
+_core:
+  default_config_hash: LLAieeozVsoZDb-2PbFxRJpQqnKmpR7-4OoRJnduz-U
+id: user.user.default
+targetEntityType: user
+bundle: user
+mode: default
+content:
+  account:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  contact: true
+  language: true
+  timezone: true
+  user_picture: true

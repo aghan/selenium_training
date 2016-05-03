@@ -1,0 +1,15 @@
+uuid: 752121c1-7f09-4e7b-b44b-75e983e1bbad
+name: Weeblog
+mail: aditya.ghan@blisstering.com
+slogan: 'Every Solution Begin with Spark !!'
+page:
+  403: ''
+  404: ''
+  front: /homepage
+admin_compact_mode: false
+weight_select_max: 100
+langcode: en
+default_langcode: en
+_core:
+  default_config_hash: yXadRE77Va-G6dxhd2kPYapAvbnSvTF6hO4oXiOEynI
+mail_notification: ''

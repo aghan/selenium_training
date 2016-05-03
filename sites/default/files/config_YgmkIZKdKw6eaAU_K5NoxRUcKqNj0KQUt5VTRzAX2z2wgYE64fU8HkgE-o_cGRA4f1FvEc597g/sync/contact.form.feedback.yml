@@ -1,0 +1,12 @@
+uuid: c55be0c8-7d58-41fd-9f06-6e9cac84ca32
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: c4zaT5cyPxuTXI6JOWt3qRtMvICT9tHB6d9a5VG-CmQ
+id: feedback
+label: 'Website feedback'
+recipients:
+  - aditya.ghan@blisstering.com
+reply: ''
+weight: 0

@@ -1,0 +1,28 @@
+uuid: 8681f3d4-8680-45cf-8600-d48daac7b0c7
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.drupal_question
+    - field.field.contact_message.drupal_question.field_drupal_version
+  module:
+    - options
+id: contact_message.drupal_question.default
+targetEntityType: contact_message
+bundle: drupal_question
+mode: default
+content:
+  field_drupal_version:
+    weight: 1
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+  message:
+    type: string
+    weight: 0
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+hidden: {  }

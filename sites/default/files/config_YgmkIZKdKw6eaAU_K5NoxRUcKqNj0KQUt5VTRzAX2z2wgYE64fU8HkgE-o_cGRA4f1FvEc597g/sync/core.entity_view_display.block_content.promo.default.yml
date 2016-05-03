@@ -1,0 +1,34 @@
+uuid: e4ee4b65-7019-438d-a300-fa05ea00ec56
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.promo
+    - field.field.block_content.promo.body
+    - field.field.block_content.promo.field_promo_link
+  module:
+    - link
+    - text
+id: block_content.promo.default
+targetEntityType: block_content
+bundle: promo
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+  field_promo_link:
+    weight: 1
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+hidden: {  }
