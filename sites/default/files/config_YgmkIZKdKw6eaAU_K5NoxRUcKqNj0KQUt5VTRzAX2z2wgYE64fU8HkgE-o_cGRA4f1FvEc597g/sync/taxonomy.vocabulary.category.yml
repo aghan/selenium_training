@@ -1,9 +1,0 @@
-uuid: 72694944-6414-45dc-a200-d282bd87a453
-langcode: en
-status: true
-dependencies: {  }
-name: Category
-vid: category
-description: 'Used to categorize blog posts.'
-hierarchy: 0
-weight: 0

@@ -1,8 +1,0 @@
-uuid: 4cbe56e8-05a7-4f1c-a10d-13c53efff882
-langcode: en
-status: true
-dependencies: {  }
-id: promo
-label: Promo
-revision: 0
-description: 'Used for promotional content.'
