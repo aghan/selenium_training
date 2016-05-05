@@ -1,0 +1,6 @@
+name: Dummy Content Creator
+description: Module to create dummy content
+package: Custom
+
+type: module
+core: 8.x
