@@ -22,7 +22,7 @@ class ContentCreator extends ControllerBase {
   if (!empty($result)) {
     return array(
       '#type' => 'markup',
-      '#markup' => $this->t('Website content already Added.'),
+      '#markup' => $this->t('Content already Added.'),
     );
   }
   // Create taxonomy terms for tags vocabulary.
@@ -231,7 +231,7 @@ We will send you the detailed list of all the instructions some days prior to th
     
     return array(
       '#type' => 'markup',
-      '#markup' => $this->t('Website Content added sucessfully'),
+      '#markup' => $this->t('Content added successfully'),
     );
   }
 }
