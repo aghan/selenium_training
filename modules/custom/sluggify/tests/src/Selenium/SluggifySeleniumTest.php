@@ -23,15 +23,6 @@ class SluggifySelenium extends PHPUnit_Extensions_Selenium2TestCase {
   }
 
   /**
-   * Function which tests Sluggify URL by an anonymous user.
-   */
-  public function testSluggifyWithoutLogin() {
-    $this->url('sluggify/form');
-    $content = $this->byXPath('//*[@id="block-blog-themes-page-title"]/div[2]/h1')->text();
-    $this->assertEquals('ACCESS DENIED', $content);
-  }
-
-  /**
    * Function which tests Sluggify URL by logging in.
    * 
    * @param string $originalString String to be sluggified
@@ -40,26 +31,30 @@ class SluggifySelenium extends PHPUnit_Extensions_Selenium2TestCase {
    * @dataProvider providertestSluggifyWithLogin
    */
   public function testSluggifyWithLogin($originalString, $expectedResult) {
+    // Go to the Login Page.
     $this->url('user/login');
+    // Enter URL Creds.
     $this->byXPath('//*[@id="edit-name"]')->value('admin');
     $this->byXPath('//*[@id="edit-pass"]')->value('admin');
+    // Hit Submit.
     $this->byId('user-login-form')->submit();
-
     $content = $this->byXPath('//*[@id="block-blog-themes-page-title"]/div[2]/h1')->text();
+    // See if the user logs in.
     $this->assertEquals('ADMIN', $content);
-
+    // Go to the Sluggify form.
     $this->url('sluggify/form');
-    //$original = 'This string will be sluggified';
-    //$expected = 'this-string-will-be-sluggified';
     $this->byXPath('//*[@id="edit-url"]')->value($originalString);
     $this->byId('sluffigy-form')->submit();
-
-    $content = $this->byXPath('//*[@id="main-content"]/div[1]/div/div/text()')->text();
-    $this->assertEquals('
-                    Your sluggified URL is : ' . $expectedResult . '
-            ', $content);
+    $content = $this->byXPath('//*[@id="main-content"]/div[1]/div/div')->text();
+    $this->assertContains($expectedResult, $content);
   }
   
+  /**
+   * Data Provider for testSluggifyWithLogin
+   *
+   * @return array
+   *   Array of arguments for the function which is to be tested.
+   */
   public function providertestSluggifyWithLogin() {
       return array(
         array('This string will be sluggified', 'this-string-will-be-sluggified'),
