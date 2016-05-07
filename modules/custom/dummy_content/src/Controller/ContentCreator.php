@@ -11,6 +11,7 @@ namespace Drupal\dummy_content\Controller;
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\taxonomy\Entity\Term;
 use Drupal\node\Entity\Node;
+use Drupal\menu_link_content\Entity\MenuLinkContent;
 
 class ContentCreator extends ControllerBase {
   public function content() {
@@ -22,9 +23,42 @@ class ContentCreator extends ControllerBase {
   if (!empty($result)) {
     return array(
       '#type' => 'markup',
-      '#markup' => $this->t('Content already Added.'),
+      '#markup' => $this->t('Content already added.'),
     );
   }
+  
+  $menuItems = array(
+    array(
+      'title' => 'Blogs',
+      'link' => 'internal:/node',
+      'menu_name' => 'main',
+    ),
+    array(
+      'title' => 'Contact Us',
+      'link' => 'internal:/contact',
+      'menu_name' => 'main',
+    ),
+    array(
+      'title' => 'Add New Blogs',
+      'link' => 'internal:/node/add/blog_post',
+      'menu_name' => 'tools',
+    ),
+  );
+  
+  foreach ($menuItems as $menu) {
+    $menu_item = MenuLinkContent::create([
+      'bundle' => 'menu_link_content',
+      'langcode' => 'en',
+      'title' => $menu['title'],
+      'description' => $menu['title'],
+      'menu_name' => $menu['menu_name'],
+      'link' => [['uri' => $menu['link']]],
+      'parent' => '',
+      'weight' => 0,
+    ]);
+    $menu_item->save();
+  }
+  
   // Create taxonomy terms for tags vocabulary.
   $categoryTermList = array(
     'Codeigniter',
